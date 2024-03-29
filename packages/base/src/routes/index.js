@@ -13,7 +13,6 @@ import P5 from "../pages/p5";
 
 import ErrorPage from "../pages/error";
 
-
 const RouterGuard = () => {
   let location = useLocation();
 
@@ -69,7 +68,6 @@ const RouterGuard = () => {
 
         </Route>
         <Route path="/error" element={<ErrorPage />}>
-
         </Route>
         <Route path="/" element={<Navigate to="/welcome" />}>
 
