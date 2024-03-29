@@ -2,30 +2,37 @@ const path = require('path');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-    entry: path.join(__dirname, 'src/index'),
-    output: {
-      filename: 'index.js',
-      path: path.resolve(__dirname, 'lib'),
-      library: {
-        name: 'p5',
-        type: 'umd',
+  mode: 'development',
+  entry: path.join(__dirname, 'src/index'),
+  output: {
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'lib'),
+    library: {
+      name: 'p5',
+      type: 'umd',
+    },
+    globalObject: 'this',
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+  },
+  devServer: { // webpack-dev-server 的配置，配合watch监听文件的变化，自动刷新浏览器，
+    static: './lib',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Headers": "*"
+    }
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
       },
-      globalObject: 'this',
-    },
-    resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-    },
-    module: {
-      rules: [
-        {
-          test: /\.(js|jsx|ts|tsx)$/,
-          exclude: /node_modules/,
-          use: 'babel-loader',
-        },
-      ],
-    },
-  };
+    ],
+  },
+};
 
 // module.exports = {
 //     // entry: './src/index.js',

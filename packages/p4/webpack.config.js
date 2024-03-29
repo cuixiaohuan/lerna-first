@@ -56,6 +56,10 @@ module.exports = {
   ],
   devServer: { // webpack-dev-server 的配置，配合watch监听文件的变化，自动刷新浏览器，
     static: './lib',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Headers": "*"
+  }
   },
   module: {
     rules: [

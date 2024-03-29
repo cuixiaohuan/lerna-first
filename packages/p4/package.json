@@ -20,7 +20,7 @@
     "test": "echo \"Error: run tests from root\" && exit 1",
     "start": "webpack --watch",
     "build": "webpack",
-    "dev": "webpack serve --open --watch"
+    "dev": "webpack serve --watch"
   },
   "dependencies": {
     "@babel/core": "^7.24.3",
