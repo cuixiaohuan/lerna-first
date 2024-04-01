@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
-import {
-  Route,
-  Routes,
-  Navigate,
-  useLocation
-} from "react-router-dom";
 
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 
 import Main from "../layouts/Main";
+
 import P4 from "../pages/p4";
+
 import P5 from "../pages/p5";
 
 import ErrorPage from "../pages/error";
@@ -29,16 +26,6 @@ const RouterGuard = () => {
   // 需要修改 用户输入了/ssa/121/1 乱七八糟的路由
   pathname = pathname.replace(/\/(\d{1,})$/, '/:id');
 
-  //   // 不需要登录的页面
-  //   if (pathname.indexOf("/login") > -1) {
-  //     return (
-  //       <Switch>
-  //         <Route path="/login" component={Login} />
-  //         <Redirect to="/login" />
-  //       </Switch>
-  //     );
-  //   }
-
   let current = menuList.find(item => item.path === pathname);
   console.log(current);
 
@@ -47,10 +34,7 @@ const RouterGuard = () => {
     return (
       <Main>
         <Routes>
-          <Route path="/" element={<Navigate to="/error" />} >
-
-          </Route>
-
+          <Route path="/" element={<Navigate to="/error" />} ></Route>
         </Routes>
       </Main>
     );
@@ -61,7 +45,7 @@ const RouterGuard = () => {
     <Main>
       <Routes>
         <Route path="/p4" element={<P4 />}></Route>
-        
+
         <Route path="/p5" element={<P5 />}></Route>
 
         <Route path="/error" element={<ErrorPage />}></Route>
