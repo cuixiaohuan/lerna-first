@@ -60,15 +60,12 @@ const RouterGuard = () => {
   return (
     <Main>
       <Routes>
-        <Route path="/p4" element={<P4 />}>
-
-        </Route>
+        <Route path="/p4" element={<P4 />}></Route>
         
-        <Route path="/p5" element={<P5 />}>
+        <Route path="/p5" element={<P5 />}></Route>
 
-        </Route>
-        <Route path="/error" element={<ErrorPage />}>
-        </Route>
+        <Route path="/error" element={<ErrorPage />}></Route>
+
         <Route path="/" element={<Navigate to="/welcome" />}>
 
         </Route>
