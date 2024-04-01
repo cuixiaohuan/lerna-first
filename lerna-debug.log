@@ -1,0 +1,49 @@
+0 silly argv {
+0 silly argv   _: [ 'version' ],
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': '../../Library/pnpm/global/5/node_modules/lerna/cli.js'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath /Users/cuixiaohuan/Project/lerna-first
+3 info current version 0.0.0
+4 silly isAnythingCommitted
+5 verbose isAnythingCommitted 1
+6 silly currentBranch
+7 verbose currentBranch main
+8 silly remoteBranchExists
+9 silly isBehindUpstream
+10 silly isBehindUpstream main is behind origin/main by 0 commit(s) and ahead by 1
+11 silly hasTags
+12 verbose hasTags false
+13 info Assuming all packages changed
+14 verbose updated base
+15 verbose updated p4
+16 verbose updated p5
+17 verbose git-describe undefined => "8a1373a"
+18 silly git-describe parsed => {"refCount":"7","sha":"8a1373a","isDirty":false}
+19 info execute Skipping releases
+20 silly lifecycle No script for "preversion" in "root", continuing
+21 silly lifecycle No script for "preversion" in "base", continuing
+22 silly lifecycle No script for "preversion" in "p4", continuing
+23 silly lifecycle No script for "preversion" in "p5", continuing
+24 silly lifecycle No script for "version" in "p5", continuing
+25 silly lifecycle No script for "version" in "p4", continuing
+26 silly lifecycle No script for "version" in "base", continuing
+27 silly lifecycle No script for "version" in "root", continuing
+28 silly gitAdd [
+28 silly gitAdd   'packages/p5/package.json',
+28 silly gitAdd   'packages/p4/package.json',
+28 silly gitAdd   'packages/base/package.json',
+28 silly gitAdd   'packages/base/package-lock.json',
+28 silly gitAdd   'lerna.json'
+28 silly gitAdd ]
+29 error Error: Command failed: git add -- packages/p5/package.json packages/p4/package.json packages/base/package.json packages/base/package-lock.json lerna.json
+29 error The following paths are ignored by one of your .gitignore files:
+29 error packages/base/package-lock.json
+29 error hint: Use -f if you really want to add them.
+29 error hint: Turn this message off by running
+29 error hint: "git config advice.addIgnoredFile false"
+29 error
+29 error     at makeError (/Users/cuixiaohuan/Project/lerna-first/node_modules/@lerna/child-process/node_modules/execa/index.js:174:9)
+29 error     at /Users/cuixiaohuan/Project/lerna-first/node_modules/@lerna/child-process/node_modules/execa/index.js:278:16
+29 error     at processTicksAndRejections (internal/process/task_queues.js:95:5)

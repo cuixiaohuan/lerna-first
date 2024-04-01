@@ -1,6 +1,6 @@
 {
   "name": "base",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@micro-zoe/micro-app": "^1.0.0-rc.4",
