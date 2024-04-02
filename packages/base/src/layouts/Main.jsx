@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Layout, Menu } from "antd";
 
+const { Header, Footer, Sider, Content } = Layout;
 /**
  * 将 如 /car/edit 路径 添加上子系统 路径 /cms/car/edit
  * 注意：如果是全局http://xxx.com/xxx 这种不能使用
@@ -35,28 +38,70 @@ const items = [
 	]),
 ];
 
-const onClick = (e) => {
-	console.log('click', e);
-	window.open('/'+e.key, "_self")
+
+const headerStyle = {
+	textAlign: 'center',
+	color: '#fff',
+	height: 64,
+	paddingInline: 48,
+	lineHeight: '64px',
+	backgroundColor: '#4096ff',
+};
+
+const contentStyle = {
+	textAlign: 'center',
+	minHeight: 120,
+	lineHeight: '120px',
+	color: '#fff',
+	backgroundColor: '#0958d9',
+};
+
+const footerStyle = {
+	textAlign: 'center',
+	color: '#fff',
+	backgroundColor: '#4096ff',
+};
+
+
+const siderStyle = {
+	textAlign: 'center',
+	lineHeight: '120px',
+	color: '#fff',
+	backgroundColor: '#1677ff',
+	width: "200px",
 };
 
 const Main = (props) => {
+	const navigate = useNavigate();
 
+	const onClick = (e) => {
+		console.log('click', e);
+		navigate('/' + e.key);
+
+	};
 	return (
 		<Layout className="base-layout-box" style={{ minHeight: "100vh" }}>
-			<p>slider组件</p>
-			<Menu
-				onClick={onClick}
-				style={{
-					width: 256,
-				}}
-				mode="vertical"
-				items={items}
-			/>
-			<p>header组件</p>
-			<Layout.Content className="layout-container">{props.children}</Layout.Content>
+			<Header style={headerStyle}>Header</Header>
 
-			<p>footer组件</p>
+			<Layout style={{ flexDirection: "row" }}>
+				{/* <Sider width="25%" style={siderStyle}>
+          Sider
+        </Sider> */}
+				<Menu
+					width="25%"
+					onClick={onClick}
+					style={siderStyle}
+					// mode="vertical"
+					mode="inline"
+					items={items}
+				/>
+				{/* <Content style={contentStyle}>Content</Content> */}
+
+				<Content style={contentStyle} className="layout-container">{props.children}</Content>
+			</Layout>
+
+
+			<Footer style={footerStyle}>Footer</Footer>
 
 		</Layout>
 	);
