@@ -8,6 +8,8 @@ import P4 from "../pages/p4";
 
 import P5 from "../pages/p5";
 
+import P6 from "../pages/p6";
+
 import ErrorPage from "../pages/error";
 
 const RouterGuard = () => {
@@ -19,6 +21,9 @@ const RouterGuard = () => {
   }, {
     path: "/p5",
     pathname: "p5",
+  }, {
+    path: "/p6",
+    pathname: "p6",
   }];
 
   let { pathname } = location;
@@ -47,6 +52,9 @@ const RouterGuard = () => {
         <Route path="/p4" element={<P4 />}></Route>
 
         <Route path="/p5" element={<P5 />}></Route>
+
+
+        <Route path="/p6" element={<P6 />}></Route>
 
         <Route path="/error" element={<ErrorPage />}></Route>
 

@@ -35,6 +35,7 @@ const items = [
 	getItem('Navigation One', '', [
 		getItem('P4', "p4"),
 		getItem('P5', "p5"),
+		getItem('P6', "p6"),
 	]),
 ];
 
