@@ -10,6 +10,10 @@ import P5 from "../pages/p5";
 
 import P6 from "../pages/p6";
 
+import P7 from "../pages/p7";
+
+import P8 from "../pages/p8";
+
 import ErrorPage from "../pages/error";
 
 const RouterGuard = () => {
@@ -24,6 +28,12 @@ const RouterGuard = () => {
   }, {
     path: "/p6",
     pathname: "p6",
+  }, {
+    path: "/p7",
+    pathname: "p7",
+  }, {
+    path: "/p8",
+    pathname: "p8",
   }];
 
   let { pathname } = location;
@@ -35,7 +45,6 @@ const RouterGuard = () => {
   console.log(current);
 
   if (!current && pathname !== '/' && pathname !== '/welcome') {
-    console.log("aaa");
     return (
       <Main>
         <Routes>
@@ -45,7 +54,7 @@ const RouterGuard = () => {
     );
   }
   // 需要判断权限的登录后结构页面
-  console.log("bbbb");
+
   return (
     <Main>
       <Routes>
@@ -53,8 +62,11 @@ const RouterGuard = () => {
 
         <Route path="/p5" element={<P5 />}></Route>
 
-
         <Route path="/p6" element={<P6 />}></Route>
+
+        <Route path="/p7" element={<P7 />}></Route>
+
+        <Route path="/p8" element={<P8 />}></Route>
 
         <Route path="/error" element={<ErrorPage />}></Route>
 

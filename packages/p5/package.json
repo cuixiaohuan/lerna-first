@@ -5,6 +5,7 @@
   "main": "lib/p5.js",
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/preset-typescript": "^7.24.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.17.0",
@@ -81,9 +82,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
   },
   "jest": {
     "roots": [

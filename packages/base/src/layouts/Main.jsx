@@ -36,6 +36,8 @@ const items = [
 		getItem('P4', "p4"),
 		getItem('P5', "p5"),
 		getItem('P6', "p6"),
+		getItem('P7', "p7"),
+		getItem('P8', "p8"),
 	]),
 ];
 
@@ -46,7 +48,7 @@ const headerStyle = {
 	height: 64,
 	paddingInline: 48,
 	lineHeight: '64px',
-	backgroundColor: '#4096ff',
+	backgroundColor: '#5d85b5',
 };
 
 const contentStyle = {
@@ -54,7 +56,7 @@ const contentStyle = {
 	minHeight: 120,
 	lineHeight: '120px',
 	color: '#fff',
-	backgroundColor: '#0958d9',
+	backgroundColor: '#d5e4fd',
 };
 
 const footerStyle = {
@@ -68,7 +70,7 @@ const siderStyle = {
 	textAlign: 'center',
 	lineHeight: '120px',
 	color: '#fff',
-	backgroundColor: '#1677ff',
+	backgroundColor: '#7eaae8',
 	width: "200px",
 };
 
